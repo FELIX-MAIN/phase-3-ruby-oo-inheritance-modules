@@ -1,14 +1,16 @@
-require_relative './dance_module'
-require_relative './meta_dancing_module'
+#EXTENDING MODULE METHODS AS CLASS METHODS
+
+module MetaDancing
+    
+    def metadata
+        "This class produces objects that love to dance."
+    end
+end
+
+class Dancer
+  extend MetaDancing
+end
 
 class Kid
-    
-    #INCLUDING THE MODULE
-
-    include Dance
-    attr_accessor :name
-
-    def initialize(name)
-        @name = name
-    end
+  extend MetaDancing
 end
